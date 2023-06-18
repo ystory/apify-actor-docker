@@ -104,4 +104,4 @@ jobs:
       -
         name: Push images
         if: github.event_name != 'pull_request'
-        run: docker push apify/actor-${{ matrix.image-name }} --all-tags
+        run: docker push ystory/actor-${{ matrix.image-name }} --all-tags
