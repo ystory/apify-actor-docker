@@ -51,7 +51,7 @@ jobs:
           CURRENT_NODE: ${{ matrix.node-version }}
           LATEST_NODE: ${{ env.NODE_LATEST }}
           RELEASE_TAG: ${{ env.RELEASE_TAG }}
-          IMAGE_NAME: apify/actor-${{ matrix.image-name }}
+          IMAGE_NAME: ystory/actor-${{ matrix.image-name }}
           FRAMEWORK_VERSION: ${{ env.PLAYWRIGHT_VERSION }}
         with:
           script: |
