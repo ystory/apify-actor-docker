@@ -37,7 +37,7 @@ jobs:
       # so fail-fast does not really prevent the publishing of all parallel builds
       fail-fast: false
       matrix:
-        image-name: [node-playwright, node-playwright-chrome, node-playwright-firefox, node-playwright-webkit]
+        image-name: [node-playwright-chromium]
         node-version: [16, 18, 20]
         platform: [linux/amd64, linux/arm64]
     steps:
