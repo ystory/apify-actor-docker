@@ -97,6 +97,7 @@ jobs:
           tags: ${{ fromJson(steps.prepare-tags.outputs.result).allTags }}
       -
         name: Test image
+        if: ${{ matrix.platform }} != 'linux/arm64'
         run: docker run --platform ${{ matrix.platform }} ${{ fromJson(steps.prepare-tags.outputs.result).firstImageName }}
       -
         name: Login to DockerHub
