@@ -62,8 +62,6 @@ jobs:
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
-        with:
-            platforms: ${{ matrix.platform }}
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -97,8 +95,8 @@ jobs:
           tags: ${{ fromJson(steps.prepare-tags.outputs.result).allTags }}
       -
         name: Test image
-        if: ${{ matrix.platform }} != 'linux/arm64'
-        run: docker run --platform ${{ matrix.platform }} ${{ fromJson(steps.prepare-tags.outputs.result).firstImageName }}
+        if: matrix.platform != 'linux/arm64'
+        run: docker run ${{ fromJson(steps.prepare-tags.outputs.result).firstImageName }}
       -
         name: Login to DockerHub
         if: github.event_name != 'pull_request'
