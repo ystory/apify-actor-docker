@@ -39,7 +39,7 @@ jobs:
       matrix:
         image-name: [node-playwright-chromium]
         node-version: [18]
-        platform: [linux/arm64]
+        platform: [linux/amd64, linux/arm64]
     steps:
       -
         name: Checkout
